@@ -142,7 +142,7 @@ export const MQTTProvider: React.FC<MQTTProviderProps> = ({ children }) => {
         }
         
         setMessages((prev) => [
-          ...prev,
+          ...prev.slice(-999),
           { topic, message: payload, timestamp: new Date(), parsedJSON, retained },
         ]);
       };
